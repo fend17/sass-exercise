@@ -1,0 +1,42 @@
+/* Sass up this code with nesting, & and variables */
+
+.btn {
+  background: none;
+  transition: all 300ms;
+  padding: 24px 32px;
+  border: 2px solid currentColor; /* currentColor is pure css */
+  border-radius: 8px;
+}
+
+.btn-primary {
+  color: blue;
+}
+
+.btn-primary:hover {
+  color: darkblue;
+}
+
+.btn-secondary {
+  color: gray;
+}
+
+.btn-secondary:hover {
+  color: darkgray;
+}
+
+.btn-success {
+  color: green;
+}
+
+.btn-success:hover {
+  color: darkgreen;
+}
+
+.btn-danger {
+  color: red;
+}
+
+.btn-danger:hover {
+  color: darkred;
+}
+
