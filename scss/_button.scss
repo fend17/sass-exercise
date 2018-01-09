@@ -1,42 +1,78 @@
 /* Sass up this code with nesting, & and variables */
 
+/*
+ * First option, using nesting and &
+ */
+
+$primary: blue;
+$secondary: gray;
+$danger: red;
+$success: green;
+
 .btn {
   background: none;
   transition: all 300ms;
   padding: 24px 32px;
-  border: 2px solid currentColor; /* currentColor is pure css */
+  border-radius: 8px;
+  &-primary {
+    
+    color: $primary;
+    &:hover {
+      //built in function in sass, darkens a color
+      color: darken($primary, 10%); //btn-primary:hover {}
+    }
+  }
+
+  &-secondary {
+    color: $secondary;
+    &:hover {
+      color: darken($secondary, 10%);
+    }
+  }
+
+  &-danger {
+    color: $danger;
+    &:hover {
+      color: darken($danger, 10%);
+    }
+  }
+
+  &-success {
+    color: $success;
+    &:hover {
+      color: darken($success, 10%);
+    }
+  }
+}
+
+/*
+ * Second option, using @extend
+ */
+
+%btn {
+  background: none;
+  transition: all 300ms;
+  padding: 24px 32px;
+  border: 1px solid currentColor;
   border-radius: 8px;
 }
 
 .btn-primary {
-  color: blue;
-}
-
-.btn-primary:hover {
-  color: darkblue;
+  @extend %btn;
+  color: $primary;
 }
 
 .btn-secondary {
-  color: gray;
-}
-
-.btn-secondary:hover {
-  color: darkgray;
-}
-
-.btn-success {
-  color: green;
-}
-
-.btn-success:hover {
-  color: darkgreen;
+  @extend %btn;
+  color: $secondary;
 }
 
 .btn-danger {
-  color: red;
+  @extend %btn;
+  color: $danger;
 }
 
-.btn-danger:hover {
-  color: darkred;
+.btn-success {
+  @extend %btn;
+  color: $success;
 }
-
